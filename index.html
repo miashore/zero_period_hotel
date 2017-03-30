@@ -16,6 +16,21 @@ function Hotel(){
 	this.getVacancyCount = function(){
 		//returns the number of unoccupied rooms
 	}
+
+	/*step 2*/
+	this.getGuestRegistry = function(){
+		//return the entire list of rooms and their guests in this format:
+		//array of objects[
+		   {
+		   	name  //name of the guest
+		   	roomID  //room they are checked in
+		   	checkedIn   //the date and time that they checked in
+		   }
+		]
+	}
+	this.getRoomHistory = function(roomID){
+		//return an array of all guests who have stayed at a particular room, including when they checked in, and when they checked out
+	}
 }
 
 
