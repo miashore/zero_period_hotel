@@ -5,19 +5,30 @@
 	<script>
 
 function Hotel(){
-
+    this.guestsCheckedIn = [];
+    this.guest = {};
+    this.maxOccupancy = 10;
+    this.currentOccupancy = this.guestsCheckedIn.length;
 	this.checkIn = function(roomID, name){
-		//add a guest to the hotel.  
+		//add a guest to the hotel.
+		this.guest.name = name;
 		//store the guest and the room that they checked into
-	}
+        this.guest.roomID = roomID;
+		this.guestsCheckedIn.push(this.guest);
+	};
 	this.checkOut = function(roomID){
 		//remove a guest from the hotel
-	}
+		this.guestIndex = this.guestsCheckedIn.find(roomID);
+		this.guestsCheckedIn.splice(this.guestIndex,1);
+		//or delete?
+	};
 	this.getVacancyCount = function(){
+	    this.remainingOccupancy = this.maxOccupancy - this.currentOccupancy;
+	    return this.remainingOccupancy;
 		//returns the number of unoccupied rooms
 	}
 }
-
+var boatel = new Hotel();
 
 	</script>
 </head>
